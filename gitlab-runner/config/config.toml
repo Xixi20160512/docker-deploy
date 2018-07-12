@@ -1,0 +1,30 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "my-runner"
+  url = "https://gitlab.com/"
+  token = "9e01da72d8401d5fa85c3f922c8482"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "alpine:latest"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+  [runners.cache]
+
+[[runners]]
+  name = "docker-runner"
+  url = "https://gitlab.com/"
+  token = "8793c0bd3f278a41f3b5ac1ae15382"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "alpine:3"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+  [runners.cache]
